@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+<div class="container">
+    <h2>Register</h2>
+    <form id="registerForm" method="POST" action="/api/register">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+    {% if message %}
+    <div class="message {{ message['status'] }}">
+        <p>{{ message['message'] }}</p>
+        {% if message['data'] %}
+        <ul>
+            <li>User ID: {{ message['data']['user_id'] }}</li>
+            <li>Username: {{ message['data']['username'] }}</li>
+            <li>Email: {{ message['data']['email'] }}</li>
+            <li>Full Name: {{ message['data']['full_name'] }}</li>
+            <li>Age: {{ message['data']['age'] }}</li>
+            <li>Gender: {{ message['data']['gender'] }}</li>
+        </ul>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
+
+
+    

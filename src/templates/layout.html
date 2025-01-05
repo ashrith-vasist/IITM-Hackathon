@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .before-signup, .after-signup {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        {% if user_logged_in %}
+        <div class="after-signup">
+            <a href="/api/data">Store Data</a>
+            <a href="/api/data/retrieve">Retrieve Data</a>
+            <a href="/api/data/update">Update Data</a>
+            <a href="/api/data/delete">Delete Data</a>
+            <a href="/api/logout">Logout</a>
+        </div>
+        {% else %}
+        <div class="before-signup">
+            <a href="/api/register">Register</a>
+            <a href="/api/login">Login</a>
+            <a href="/api/token">Generate Token</a>
+        </div>
+        {% endif %}
+    </nav>
+    {%block content%} {%endblock%}
+</body>
+</html>

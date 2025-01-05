@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables
+.env
+*.env
+
+# Flask instance and config files
+instance/
+config.py
+
+# Logs and debug files
+*.log
+*.out
+*.err
+
+# Database files
+*.sqlite3
+*.db
+
+# Compiled or temporary files
+*.pyo
+*.so
+*.egg
+*.egg-info/
+
+# PyInstaller
+*.spec
+
+# Celery beat schedule files
+celerybeat-schedule
+
+# Flask cache
+.cache/
+.cache/*
+*.bak
+
+# Static files
+static/
+staticfiles/
+
+# Media uploads
+media/
+uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+.coverage
+coverage.xml
+htmlcov/
+
